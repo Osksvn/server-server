@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title> Oskar Svensson</title>
+		<link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+		<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+      <link rel="stylesheet" href="C:\Users\Osksv\Documents\Skolan\WEB\my-website\debug.css">
+        <style>
+          .center {
+            display: flex;
+            justify-content: center;
+            align-items: center,
+          }
+
+          .right {
+            display: flex;
+            justify-content: right;
+            align-items: right;
+          }
+        
+        </style>
+        
+	</head>
+	<body>
+<div class="container">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item is-size-3" href="/home">
+      <i class="fas fa-home"></i>
+    </a>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+
+    <!--  <a class="navbar-item">
+        Documentation
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            About
+          </a>
+          <a class="navbar-item">
+            Jobs
+          </a>
+          <a class="navbar-item">
+            Contact
+          </a>
+          -->
+          <hr class="navbar-divider">
+      <!--    <a class="navbar-item">
+            Report an issue
+          </a>
+        </div>
+      </div>
+    </div>
+-->
+    <div class="navbar-end">
+     {{#if loggedin}} <a class="navbar-item is-size-3" href="/admin">
+        <i class="fas fa-user"></i>
+          </a>
+          <p>Inlogged as: Oskar</p>
+          {{else}}
+        <a class="navbar-item is-size-3" href="">
+        <i class="fas fa-user-lock"></i>
+          </a>
+          {{/if}}
+        </div>
+      </div>
+        <div class="navbar-item is-pulled-right"></div>
+          <div class="buttons is-pulled-right">
+        {{#if loggedin}}
+        <form action="/logout" method="POST"> <button class="button is-info is-size-5 is-pulled-right"> Log out </button>
+          </form>
+        {{else}}
+         <a class="button is-info is-size-5 is-pulled-right" href="/loginPage"> Log in {{/if}}
+      </a>
+      </div>
+    </div>
+  </div>
+</nav>
+</div>
+
+        <section class="hero">
+            <div class="hero-body">
+                <div class="container">
+                    <figure class="image">
+                        <img src="space_sky_stars_79233_3840x2160 (2).jpg" alt="header" >
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        
+          
+          {{{ body }}}
+
+	</body>
+</html>

@@ -1,0 +1,67 @@
+<div class="container">
+                
+    <div class="columns">
+      <div class="column">
+        <div class="notification is-primary">
+          <p class="is-size-5">
+           <a href="/contact">Contact</a>
+          </p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="notification is-primary">
+          <p class="is-size-5">
+           <a href="/about">About</a>
+          </p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="notification is-primary">
+          <p class="is-size-5">
+        <a href="/blogpost">Blogposts</a>
+          </p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="notification is-info">
+          <p class="is-size-5">
+            Gallery
+          </p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="notification is-primary">
+          <p class="is-size-5">
+            <a href="/guestbook">Guestbook</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div> 
+    </div>
+  </div>
+<section class="section">
+<div class="container">
+<div class="row columns is-multiline">
+    {{#if gallery.length}}
+    {{#each gallery}}
+                <div class="column is-one-third">
+                    <div class="card large">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="/{{image}}" alt="Image"name="image"> 
+                            </figure>
+                        </div>
+                            <div class="media">
+                            <div class="media-content" name="content">{{#if ../loggedin}} <form method="POST" action="/delgallery/{{id}}"> <button class="button is-danger">Delete</button> </form> {{/if}}
+                            </div>
+                            </div> 
+                    </div>
+                </div> 
+                {{/each}}
+                {{else}}
+                <p>No gallery entries</p>
+                {{/if}}   
+            </div>
+    </div>
+</section>

@@ -1,0 +1,61 @@
+<div class="container">
+                
+    <div class="columns">
+      <div class="column">
+        <div class="notification is-primary">
+          <p class="is-size-5">
+            <a href="/contact">Contact</a>
+          </p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="notification is-primary">
+          <p class="is-size-5">
+           <a href="/about">About</a>
+          </p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="notification is-primary">
+          <p class="is-size-5">
+            <a href="/blogpost">Blogposts</a>
+          </p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="notification is-primary">
+          <p class="is-size-5">
+            <a href="/gallery">Gallery</a>
+          </p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="notification is-primary">
+          <p class="is-size-5">
+            <a href="/guestbook">Guestbook</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div> 
+    </div>
+  </div>
+
+<form action="/updateblog/{{blogpost.id}}" method="POST">
+  <div class="container">
+        <div class="field">
+            <label class="label">Edit blogpost</label>
+                <div class="control">
+                        <textarea class="input" id="titel" placeholder="Titel.." name="titleblogpost">{{blogpost.title}}</textarea>
+                </div>
+        </div>
+        <div class="field">
+        <div class="control">
+            <textarea class="textarea" id="blogpost" placeholder="Blogpost.." name="contentblogpost">{{blogpost.content}}</textarea>
+        </div>
+    </div>
+        <div class="control">
+    <button class="button is-info"> Submit</button>
+        </div>
+        </div>
+</form>

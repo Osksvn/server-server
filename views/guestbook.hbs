@@ -1,0 +1,80 @@
+<link rel="stylesheet" href="C:\Users\Osksv\Documents\Skolan\WEB\my-website\debug.css">
+
+<div class="container">           
+    <div class="columns">
+      <div class="column">
+        <div class="notification is-primary">
+          <p class="is-size-5">
+            <a href="/contact">Contact</a>
+          </p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="notification is-primary">
+          <p class="is-size-5">
+           <a href="/about">About</a>
+          </p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="notification is-primary">
+          <p class="is-size-5">
+            <a href="/blogpost">Blogposts</a>
+          </p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="notification is-primary">
+          <p class="is-size-5">
+            <a href="/gallery">Gallery</a>
+          </p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="notification is-info">
+          <p class="is-size-5">
+            Guestbook
+          </p>
+        </div>
+      </div>
+    </div>
+  </div> 
+    </div>
+  </div>
+
+<section class="section">
+  <div class="container">
+      <div class="columns">
+
+                            <form method="POST" action="/guestbookEntry" >
+                            <input type="hidden" name="_csrf" value="{{csrfToken}}">
+            <div class="column notification is-warning">
+                <p class="is-size-5">Write something in the guestbook!</p>
+                <p>Your name</p>
+            <textarea class="input" name="author" id="author" cols="53" required ></textarea>
+            <p>Your message</p>
+                <textarea class="textarea" name="message" id="message" cols="53" required ></textarea>
+                <div class="control">
+                <button class="button is-info">Submit</button>
+                </div>
+            </div>
+            </form>
+            <div class="column is-two-thirds notification is-dark">
+                <p class="is-size-3 notification is-danger">Guestbook entries are displayed here</p>
+                 {{#if gbook}}
+                {{#each gbook}}
+                <div class="column notification is-info" > 
+                <p class="is-size-3" name="author"> {{author}}</p>
+                <p class="is-size-5" name="msg"> {{message}}</p>
+                {{#if ../loggedin}} <form action="/delg/{{id}}" method="POST"> <button class="button is-danger">Delete</button> </form>
+                {{/if}}
+                </div>
+            {{/each}}
+            {{else}}
+            No guestbook entries</div>
+            {{/if}}
+
+
+      </div>
+  </div>
+</section>
